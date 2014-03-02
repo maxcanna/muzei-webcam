@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Muzei Webcam</string>
+    <string name="source_name">Webcam</string>
+    <string name="source_description">Usam imagens de webcam</string>
+    <string name="source_default_subtitle">Definir um URL de imagem para começar</string>
+    <string name="error_invalid_url">URL inválido</string>
+    <string name="command_refresh">Atualizar</string>
+    <string name="preference_title_url">URL</string>
+    <string name="preference_title_name">Nome</string>
+    <string name="preference_title_wifi_only">Somente WiFi</string>
+    <string name="preference_title_grab_url">Agarre URL</string>
+    <string name="preference_title_interval">Intervalo de atualização (minutos)</string>
+    <string name="preference_summary_wifi_only">Descarregue novas imagens somente via Wi-Fi</string>
+    <string name="preference_summary_grab_url">Compartilhar uma URL para usá-lo como fonte</string>
+    <string name="about_credits"><![CDATA[<b>Imagem predefinida</b> por <em>me</em><br />https://www.flickr.com/photos/maxcanna/<br /><br /><b>Muzei</b> por <em>Roman Nurik</em><br />https://github.com/romannurik/muzei<br /><br /><b>Calligraphy</b> por <em>Christopher Jenkins</em><br />https://github.com/chrisjenx/Calligraphy]]></string>
+    <string name="about_credits_title">Créditos</string>
+    <string name="about_description">Extensão para Muzei criado por Massimiliano Cannarozzo para mostrar imagens de webcams como papel de parede.</string>
+    <string name="about_contacts">Contactos</string>
+</resources>

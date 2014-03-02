@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.luxteam.muzeiwebcam" >
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:name=".MuzeiWebcamApplication"
+        android:theme="@style/MWTheme" >
+
+        <service
+            android:name="net.luxteam.muzeiwebcam.api.WebcamArtSource"
+            android:description="@string/source_description"
+            android:icon="@drawable/ic_source"
+            android:label="@string/source_name" >
+            <intent-filter>
+                <action android:name="com.google.android.apps.muzei.api.MuzeiArtSource" />
+            </intent-filter>
+
+            <meta-data
+                android:name="color"
+                android:value="@color/sourceColor" />
+            <meta-data
+                android:name="settingsActivity"
+                android:value="net.luxteam.muzeiwebcam.ui.activity.SettingsActivity" />
+        </service>
+
+        <activity
+            android:name="net.luxteam.muzeiwebcam.ui.activity.SettingsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MANAGE_NETWORK_USAGE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity-alias
+            android:name="net.luxteam.muzeiwebcam.ShareSettingsActivity"
+            android:enabled="true"
+            android:targetActivity="net.luxteam.muzeiwebcam.ui.activity.SettingsActivity" >
+            <intent-filter android:label="@string/app_name" >
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity android:name=".ui.activity.AboutActivity" />
+
+    </application>
+
+</manifest>
