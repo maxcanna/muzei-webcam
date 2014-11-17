@@ -51,30 +51,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:contentDescription="@string/content_description_twitter"
                 android:id="@+id/about_twitter"
                 android:src="@drawable/ic_action_twitter"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:contentDescription="@string/content_description_facebook"
                 android:id="@+id/about_facebook"
                 android:src="@drawable/ic_action_facebook"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:contentDescription="@string/content_description_gplus"
                 android:id="@+id/about_gplus"
                 android:src="@drawable/ic_action_gplus"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:contentDescription="@string/content_description_gplay"
                 android:id="@+id/about_gplay"
                 android:src="@drawable/ic_action_gplay"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:contentDescription="@string/content_description_github"
                 android:id="@+id/about_github"
                 android:src="@drawable/ic_action_github"/>
         </LinearLayout>
