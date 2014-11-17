@@ -17,6 +17,7 @@
                 android:textSize="32sp"
                 android:paddingTop="10dp"
                 android:text="@string/app_name"
+                tools:ignore="MissingPrefix"
                 fontPath="fonts/Alegreya-BlackItalic.ttf" />
             <TextView
                 android:layout_width="match_parent"
@@ -41,6 +42,7 @@
                 android:textSize="20sp"
                 android:padding="10dp"
                 android:text="@string/about_contacts"
+                tools:ignore="MissingPrefix"
                 fontPath="fonts/Alegreya-BlackItalic.ttf" />
             <LinearLayout
                 android:orientation="horizontal"
