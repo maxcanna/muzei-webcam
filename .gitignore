@@ -4,6 +4,7 @@
 .DS_Store
 /bin/
 /gen/
+/build/
 /MuzeiWebcam/build/
 *.iml
 com_crashlytics_export_strings.xml
