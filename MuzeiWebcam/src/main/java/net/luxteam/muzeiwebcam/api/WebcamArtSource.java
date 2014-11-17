@@ -10,7 +10,6 @@ package net.luxteam.muzeiwebcam.api;
 import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.android.apps.muzei.api.Artwork;

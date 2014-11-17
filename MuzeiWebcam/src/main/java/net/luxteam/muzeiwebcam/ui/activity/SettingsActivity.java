@@ -14,7 +14,6 @@ import android.os.Bundle;
 
 import com.google.analytics.tracking.android.EasyTracker;
 
-import net.luxteam.muzeiwebcam.api.WebcamArtSource;
 import net.luxteam.muzeiwebcam.ui.fragment.MWPreferenceFragment;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
