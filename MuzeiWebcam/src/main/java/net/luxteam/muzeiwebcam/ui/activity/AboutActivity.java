@@ -22,7 +22,6 @@ import com.google.analytics.tracking.android.EasyTracker;
 import net.luxteam.muzeiwebcam.BuildConfig;
 import net.luxteam.muzeiwebcam.R;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class AboutActivity extends Activity {
@@ -36,8 +35,6 @@ public class AboutActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-
-        CalligraphyConfig.initDefault("fonts/Roboto-Light.ttf");
 
         TextView mVersionTextView = (TextView) findViewById(R.id.about_version);
         TextView mCreditsTextView = (TextView) findViewById(R.id.about_credits);

@@ -17,7 +17,7 @@
                 android:textSize="32sp"
                 android:paddingTop="10dp"
                 android:text="@string/app_name"
-                android:fontFamily="fonts/Alegreya-BlackItalic.ttf" />
+                fontPath="fonts/Alegreya-BlackItalic.ttf" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
                 android:textSize="20sp"
                 android:padding="10dp"
                 android:text="@string/about_contacts"
-                android:fontFamily="fonts/Alegreya-BlackItalic.ttf" />
+                fontPath="fonts/Alegreya-BlackItalic.ttf" />
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"

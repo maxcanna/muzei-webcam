@@ -9,11 +9,13 @@ package net.luxteam.muzeiwebcam;
 
 import android.app.Application;
 import com.google.analytics.tracking.android.EasyTracker;
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 public class MuzeiWebcamApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
         EasyTracker.getInstance().setContext(this);
+        CalligraphyConfig.initDefault("fonts/Roboto-Light.ttf", R.attr.fontPath);
     }
 }

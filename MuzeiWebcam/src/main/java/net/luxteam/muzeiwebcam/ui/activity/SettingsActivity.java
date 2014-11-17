@@ -16,7 +16,6 @@ import com.google.analytics.tracking.android.EasyTracker;
 
 import net.luxteam.muzeiwebcam.ui.fragment.MWPreferenceFragment;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SettingsActivity extends Activity {
@@ -24,8 +23,6 @@ public class SettingsActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        CalligraphyConfig.initDefault("fonts/Roboto-Light.ttf");
 
         MWPreferenceFragment f = new MWPreferenceFragment();
 

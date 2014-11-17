@@ -11,7 +11,7 @@
         android:textSize="32sp"
         android:padding="10dp"
         android:text="@string/app_name"
-        android:fontFamily="fonts/Alegreya-BlackItalic.ttf"
+        fontPath="fonts/Alegreya-BlackItalic.ttf"
         android:drawableEnd="@drawable/ic_action_info"
         android:drawablePadding="-33dp"
         android:id="@+id/about" />
