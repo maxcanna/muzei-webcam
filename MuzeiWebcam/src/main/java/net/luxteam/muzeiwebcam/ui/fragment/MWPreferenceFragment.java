@@ -106,7 +106,7 @@ public class MWPreferenceFragment extends PreferenceFragment implements SharedPr
             PackageManager pm = a.getPackageManager();
 
             pm.setComponentEnabledSetting(
-                    new ComponentName(a, BuildConfig.PACKAGE_NAME + ".ShareSettingsActivity"),
+                    new ComponentName(a, BuildConfig.APPLICATION_ID+ ".ShareSettingsActivity"),
                     active ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED : PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                     PackageManager.DONT_KILL_APP
             );
