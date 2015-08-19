@@ -20,36 +20,20 @@ public class Utils {
 
     private static Toast t;
 
-    public static void showToast(final Context ctx, final String message, final int duration){
+    public static void showToast(final Context ctx, int resourceId){
+        if(ctx == null) return;
+
+        final String message = ctx.getString(resourceId);
+
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             public void run() {
-                if(t == null){
-                    t = Toast.makeText(ctx, message, duration);
+                if (t == null) {
+                    t = Toast.makeText(ctx, message, Toast.LENGTH_SHORT);
                 } else t.setText(message);
 
                 t.show();
             }
         });
-    }
-
-    public static void showToast(Context ctx, int message){
-        showToast(ctx,message,Toast.LENGTH_SHORT);
-    }
-
-    public static void showToast(Context ctx, int message, int duration){
-        if(ctx == null) return;
-
-        showToast(ctx,ctx.getResources().getString(message),duration);
-    }
-
-    public static void storeValue(Context ctx, String name, boolean value){
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-        prefs.edit().putBoolean(name,value).apply();
-    }
-
-    public static void storeValue(Context ctx, String name, int value){
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-        prefs.edit().putInt(name, value).apply();
     }
 
     public static void storeValue(Context ctx, String name, String value){
@@ -60,11 +44,6 @@ public class Utils {
     public static boolean getBooleanValue(Context ctx, String name){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
         return prefs.getBoolean(name,false);
-    }
-
-    public static int getIntValue(Context ctx, String name){
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-        return prefs.getInt(name, 0);
     }
 
     public static String getStringValue(Context ctx, String name){
