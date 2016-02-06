@@ -3,7 +3,7 @@ Muzei Webcam [![Build Status](https://travis-ci.org/maxcanna/muzei-webcam.svg?br
 
 Muzei Live Wallpaper extension to show webcam imagery as wallpaper.
 
-[![Badge](http://gplay.ws/badge/?id=net.luxteam.muzeiwebcam)][2]
+[![Badge](https://gplay.ws/badge/?id=net.luxteam.muzeiwebcam)][2]
 
 ![Main screenshot][1]
 
