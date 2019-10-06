@@ -1,4 +1,4 @@
-Muzei Webcam ![](https://img.shields.io/codeship/3e5e4ad0-54f8-0134-43b0-4e423e130982/master.svg?maxAge=2592000)
+Muzei Webcam [![CI Status](https://github.com/maxcanna/muzei-webcam/workflows/CI/badge.svg)](https://github.com/maxcanna/muzei-webcam/actions)
 ============
 
 Muzei Live Wallpaper extension to show webcam imagery as wallpaper.
