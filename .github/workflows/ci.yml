@@ -1,0 +1,29 @@
+name: CI
+
+on: [push]
+
+jobs:
+  ci:
+    runs-on: ubuntu-18.04
+    container:
+      image: java:8
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v1
+    - name: Download Android SDK
+      run: |
+         cd ~
+         curl -s https://dl.google.com/android/android-sdk_r23.0.2-linux.tgz | tar xz
+         echo y | android-sdk-linux/tools/android update sdk --no-ui --all --filter build-tools-23.0.0,android-23
+    - name: Build
+      run: |
+        dpkg --add-architecture i386
+        apt-get -qq update || true
+        apt-get -qq install -y --reinstall libgcc1:i386 libc6-i386 lib32z1
+        export ANDROID_HOME=$HOME/android-sdk-linux
+        ./gradlew assembleDebug
+    - uses: actions/upload-artifact@master
+      with:
+       name: APK
+       path: MuzeiWebcam/build/outputs/apk/MuzeiWebcam-debug.apk
+
