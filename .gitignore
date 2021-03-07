@@ -9,3 +9,4 @@
 *.iml
 com_crashlytics_export_strings.xml
 /MuzeiWebcam/src/main/assets/crashlytics-build.properties
+MuzeiWebcam/versionNumber
