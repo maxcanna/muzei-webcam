@@ -25,8 +25,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.google.analytics.tracking.android.EasyTracker;
-
 import net.luxteam.muzeiwebcam.BuildConfig;
 import net.luxteam.muzeiwebcam.R;
 import net.luxteam.muzeiwebcam.api.WebcamArtSource;
@@ -60,10 +58,8 @@ public class MWPreferenceFragment extends PreferenceFragment implements SharedPr
             final String url = getArguments().getString(EXTRA_URL);
             if(!TextUtils.isEmpty(url) && Patterns.WEB_URL.matcher(url).matches()){
                 Utils.storeValue(a, getString(R.string.preference_key_url), url);
-                EasyTracker.getTracker().sendEvent("settings", EXTRA_URL, "valid", 0l);
             } else {
                 Utils.showToast(a , R.string.error_invalid_url);
-                EasyTracker.getTracker().sendEvent("settings", EXTRA_URL, "invalid" ,0l);
             }
         }
     }
@@ -101,8 +97,6 @@ public class MWPreferenceFragment extends PreferenceFragment implements SharedPr
         if(s.equals(a.getString(R.string.preference_key_grab_url))){
             boolean active = Utils.getBooleanValue(a, s);
 
-            EasyTracker.getTracker().sendEvent("settings", s, String.valueOf(active), 0l);
-
             PackageManager pm = a.getPackageManager();
 
             pm.setComponentEnabledSetting(
@@ -114,8 +108,6 @@ public class MWPreferenceFragment extends PreferenceFragment implements SharedPr
             String interval = Utils.getStringValue(a, s);
             if(TextUtils.isEmpty(interval)){
                 Utils.storeValue(a, s, "1");
-            } else {
-                EasyTracker.getTracker().sendEvent("settings", s, String.valueOf(interval), 0l);
             }
         } else if(s.equals(a.getString(R.string.preference_key_url))){
             String url = Utils.getStringValue(a, s);
