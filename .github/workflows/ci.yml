@@ -13,6 +13,13 @@ jobs:
       uses: actions/checkout@v1
     - name: Check if there are fixup commits
       run: git log --pretty=format:%s origin/master.. | xargs | grep -v fixup
+  version:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v1
+    - name: Check version bump
+      run: F=$(git diff --diff-filter=M origin/master -- "MuzeiWebcam/build.gradle"); echo $F | grep "def version"
   ci:
     runs-on: ubuntu-latest
     steps:
