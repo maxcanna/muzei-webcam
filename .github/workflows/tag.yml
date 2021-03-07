@@ -20,5 +20,5 @@ jobs:
           ./gradlew getVersionNumber
           git config --global user.email "massi@massi.dev"
           git config --global user.name "Massimiliano Cannarozzo"
-          git tag -a $(cat versionNumber) -m "$(cat versionNumber)"
+          git tag -a $(cat MuzeiWebcam/versionNumber) -m "$(cat MuzeiWebcam/versionNumber)"
           git push "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" --tags
