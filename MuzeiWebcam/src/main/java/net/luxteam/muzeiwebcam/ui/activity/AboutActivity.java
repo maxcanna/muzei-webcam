@@ -38,7 +38,6 @@ public class AboutActivity extends Activity {
         TextView mCreditsTextView = (TextView) findViewById(R.id.about_credits);
         ImageView mTwitterImageView = (ImageView) findViewById(R.id.about_twitter);
         ImageView mFacebookImageView = (ImageView) findViewById(R.id.about_facebook);
-        ImageView mGplusImageView = (ImageView) findViewById(R.id.about_gplus);
         ImageView mGplayImageView = (ImageView) findViewById(R.id.about_gplay);
         ImageView mGithubImageView = (ImageView) findViewById(R.id.about_github);
 
@@ -57,14 +56,6 @@ public class AboutActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_facebook)));
-                startActivity(browserIntent);
-            }
-        });
-
-        mGplusImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_gplus)));
                 startActivity(browserIntent);
             }
         });

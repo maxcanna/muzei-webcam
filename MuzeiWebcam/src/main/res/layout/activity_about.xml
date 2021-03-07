@@ -65,13 +65,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:contentDescription="@string/content_description_gplus"
-                android:id="@+id/about_gplus"
-                android:src="@drawable/ic_action_gplus"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
                 android:contentDescription="@string/content_description_gplay"
                 android:id="@+id/about_gplay"
                 android:src="@drawable/ic_action_gplay"/>
