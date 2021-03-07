@@ -17,8 +17,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.analytics.tracking.android.EasyTracker;
-
 import net.luxteam.muzeiwebcam.BuildConfig;
 import net.luxteam.muzeiwebcam.R;
 
@@ -50,8 +48,6 @@ public class AboutActivity extends Activity {
         mTwitterImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EasyTracker.getTracker().sendEvent("about","contact","twitter", 0l);
-
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_twitter)));
                 startActivity(browserIntent);
             }
@@ -60,8 +56,6 @@ public class AboutActivity extends Activity {
         mFacebookImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EasyTracker.getTracker().sendEvent("about","contact","facebook", 0l);
-
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_facebook)));
                 startActivity(browserIntent);
             }
@@ -70,8 +64,6 @@ public class AboutActivity extends Activity {
         mGplusImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EasyTracker.getTracker().sendEvent("about","contact","gplus", 0l);
-
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_gplus)));
                 startActivity(browserIntent);
             }
@@ -80,8 +72,6 @@ public class AboutActivity extends Activity {
         mGplayImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EasyTracker.getTracker().sendEvent("about","contact","gplay", 0l);
-
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_gplay)));
                 startActivity(browserIntent);
             }
@@ -90,23 +80,9 @@ public class AboutActivity extends Activity {
         mGithubImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EasyTracker.getTracker().sendEvent("about","contact","github", 0l);
-
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_github)));
                 startActivity(browserIntent);
             }
         });
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        EasyTracker.getInstance().activityStop(this);
-    }
-
-    @Override
-    public void onStart(){
-        super.onStart();
-        EasyTracker.getTracker().sendView("/about");
     }
 }

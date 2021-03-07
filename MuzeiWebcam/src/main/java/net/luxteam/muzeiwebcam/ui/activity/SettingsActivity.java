@@ -12,8 +12,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.analytics.tracking.android.EasyTracker;
-
 import net.luxteam.muzeiwebcam.ui.fragment.MWPreferenceFragment;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -47,17 +45,5 @@ public class SettingsActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        EasyTracker.getInstance().activityStop(this);
-    }
-
-    @Override
-    public void onStart(){
-        super.onStart();
-        EasyTracker.getTracker().sendView("/settings");
     }
 }

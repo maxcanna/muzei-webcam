@@ -11,7 +11,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.google.analytics.tracking.android.EasyTracker;
 import com.google.android.apps.muzei.api.Artwork;
 import com.google.android.apps.muzei.api.MuzeiArtSource;
 import com.google.android.apps.muzei.api.UserCommand;
@@ -83,8 +82,6 @@ public class WebcamArtSource extends MuzeiArtSource {
                 !Utils.isWifiConnected(this)){
             scheduleUpdate(System.currentTimeMillis() + interval);
 
-            EasyTracker.getTracker().sendEvent("update", "skipped", "wifi", 0l);
-
             return;
         }
 
@@ -100,8 +97,6 @@ public class WebcamArtSource extends MuzeiArtSource {
             setUserCommands(new UserCommand(CUSTOM_COMMAND_ID_REFRESH, getString(R.string.command_refresh)));
         }
 
-        EasyTracker.getTracker().sendEvent("update", "start", null, (long)interval);
-
         publishArtwork(new Artwork.Builder()
                 .title(title)
                 .byline(subtitle)
@@ -111,17 +106,5 @@ public class WebcamArtSource extends MuzeiArtSource {
                 .build());
 
         scheduleUpdate(System.currentTimeMillis() + interval);
-    }
-
-    @Override
-    protected void onEnabled() {
-        super.onEnabled();
-        EasyTracker.getTracker().sendEvent("source", "enabled", null, 0l);
-    }
-
-    @Override
-    protected void onDisabled() {
-        super.onDisabled();
-        EasyTracker.getTracker().sendEvent("source", "disabled", null, 0l);
     }
 }
