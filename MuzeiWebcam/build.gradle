@@ -22,7 +22,6 @@ task getVersionNumber{
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: '*.jar')
     implementation 'com.google.android.apps.muzei:muzei-api:1.0'
     implementation 'uk.co.chrisjenx:calligraphy:1.2.0'
 }
