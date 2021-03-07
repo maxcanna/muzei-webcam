@@ -28,7 +28,8 @@ jobs:
     - name: Build
       run: |
         ./gradlew assembleDebug
-    - uses: actions/upload-artifact@v1
+    - name: Upload APK as artifact
+      uses: actions/upload-artifact@v2
       with:
        name: APK
        path: MuzeiWebcam/build/outputs/apk/MuzeiWebcam-debug.apk
