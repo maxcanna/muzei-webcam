@@ -104,11 +104,6 @@ public class MWPreferenceFragment extends PreferenceFragment implements SharedPr
                     active ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED : PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                     PackageManager.DONT_KILL_APP
             );
-        } else if(s.equals(a.getString(R.string.preference_key_interval))){
-            String interval = Utils.getStringValue(a, s);
-            if(TextUtils.isEmpty(interval)){
-                Utils.storeValue(a, s, "1");
-            }
         } else if(s.equals(a.getString(R.string.preference_key_url))){
             String url = Utils.getStringValue(a, s);
             if(TextUtils.isEmpty(url) || !Patterns.WEB_URL.matcher(url).matches()){

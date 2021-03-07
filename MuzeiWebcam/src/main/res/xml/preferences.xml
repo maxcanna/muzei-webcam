@@ -22,12 +22,4 @@
         android:icon="@drawable/ic_action_share"
         android:summary="@string/preference_summary_grab_url"
         android:defaultValue="true" />
-    <EditTextPreference android:title="@string/preference_title_interval"
-        android:key="@string/preference_key_interval"
-        android:icon="@drawable/ic_action_clock_white"
-        android:dialogTitle=""
-        android:singleLine="true"
-        android:inputType="number"
-        android:defaultValue="@string/source_default_interval"
-        android:hint="@string/source_default_interval" />
 </PreferenceScreen>

@@ -11,7 +11,6 @@
     <string translatable="false" name="preference_key_name">imageName</string>
     <string translatable="false" name="preference_key_wifi_only">wifiOnly</string>
     <string translatable="false" name="preference_key_grab_url">grabUrl</string>
-    <string translatable="false" name="preference_key_interval">refreshInterval</string>
     <string translatable="false" name="ga_trackingId" />
     <bool name="ga_autoActivityTracking">true</bool>
     <bool name="ga_reportUncaughtExceptions">true</bool>
