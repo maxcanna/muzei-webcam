@@ -9,7 +9,6 @@
     <string translatable="false" name="url_contacts_github">https://github.com/maxcanna/muzei-webcam</string>
     <string translatable="false" name="preference_key_url">imageUrl</string>
     <string translatable="false" name="preference_key_name">imageName</string>
-    <string translatable="false" name="preference_key_wifi_only">wifiOnly</string>
     <string translatable="false" name="preference_key_grab_url">grabUrl</string>
     <string translatable="false" name="ga_trackingId" />
     <bool name="ga_autoActivityTracking">true</bool>
