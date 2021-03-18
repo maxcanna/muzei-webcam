@@ -31,6 +31,8 @@ import net.luxteam.muzeiwebcam.api.WebcamArtSource;
 import net.luxteam.muzeiwebcam.ui.activity.AboutActivity;
 import net.luxteam.muzeiwebcam.utils.Utils;
 
+import org.jetbrains.annotations.NotNull;
+
 public class MWPreferenceFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     public static final String EXTRA_URL = "extraUrl";
@@ -67,7 +69,7 @@ public class MWPreferenceFragment extends PreferenceFragmentCompat implements Sh
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NotNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         TextView mAboutTextView = (TextView) view.findViewById(R.id.about);
