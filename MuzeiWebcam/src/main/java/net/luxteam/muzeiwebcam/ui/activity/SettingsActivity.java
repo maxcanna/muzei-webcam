@@ -41,9 +41,4 @@ public class SettingsActivity extends FragmentActivity {
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(new CalligraphyContextWrapper(newBase));
     }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
 }
