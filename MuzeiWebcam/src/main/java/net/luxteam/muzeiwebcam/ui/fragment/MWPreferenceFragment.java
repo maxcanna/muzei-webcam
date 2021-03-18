@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.preference.EditTextPreference;
@@ -25,13 +26,19 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.apps.muzei.api.provider.Artwork;
+import com.google.android.apps.muzei.api.provider.ProviderClient;
+import com.google.android.apps.muzei.api.provider.ProviderContract;
+
 import net.luxteam.muzeiwebcam.BuildConfig;
 import net.luxteam.muzeiwebcam.R;
-import net.luxteam.muzeiwebcam.api.WebcamArtSource;
 import net.luxteam.muzeiwebcam.ui.activity.AboutActivity;
 import net.luxteam.muzeiwebcam.utils.Utils;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MWPreferenceFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -113,10 +120,20 @@ public class MWPreferenceFragment extends PreferenceFragmentCompat implements Sh
     }
 
     private void refresh(Context c) {
-        Intent i = new Intent(c,WebcamArtSource.class);
-        i.setAction(WebcamArtSource.ACTION_REFRESH);
+        final ProviderClient providerClient = ProviderContract.getProviderClient(c, "net.luxteam.muzeiwebcam");
+        final Date now = new Date();
+        final String subtitle = SimpleDateFormat.getInstance().format(now);
+        final String title = Utils.getStringValue(c, c.getString(R.string.preference_key_name));
+        final String url = Utils.getStringValue(c, c.getString(R.string.preference_key_url));
+        final Uri uri = Uri.parse(url);
 
-        c.startService(i);
+        providerClient.setArtwork(new Artwork.Builder()
+                .title(title)
+                .byline(subtitle)
+                .webUri(uri)
+                .token(String.valueOf(now.getTime()))
+                .persistentUri(uri)
+                .build());
     }
 
     private void updateSubtitles() {
