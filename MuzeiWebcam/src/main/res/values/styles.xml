@@ -8,5 +8,9 @@
         <item name="android:listChoiceBackgroundIndicator">@drawable/mwtheme_list_selector_holo_dark</item>
         <item name="android:activatedBackgroundIndicator">@drawable/mwtheme_activated_background_holo_dark</item>
         <item name="android:textColor">@android:color/white</item>
+        <item name="preferenceTheme">@style/MWTheme.PreferenceThemeOverlay</item>
+    </style>
+    <style name="MWTheme.PreferenceThemeOverlay" parent="@style/PreferenceThemeOverlay">
+        <item name="android:layout">@layout/fragment_preference_list</item>
     </style>
 </resources>

@@ -16,11 +16,11 @@
         android:drawableEnd="@drawable/ic_action_info"
         android:drawablePadding="-33dp"
         android:id="@+id/about" />
-    <ListView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_content"
         android:divider="@null"
         android:dividerHeight="0dp"
-        android:id="@android:id/list" />
+        android:id="@android:id/list_container" tools:targetApi="N" />
 </LinearLayout>
