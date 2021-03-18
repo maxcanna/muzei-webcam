@@ -7,16 +7,16 @@ package net.luxteam.muzeiwebcam.ui.activity;
 //  Copyright (c) 2014 Muzei Webcam. All rights reserved.
 //
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import net.luxteam.muzeiwebcam.ui.fragment.MWPreferenceFragment;
 
+import androidx.fragment.app.FragmentActivity;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class SettingsActivity extends Activity {
+public class SettingsActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class SettingsActivity extends Activity {
             f.setArguments(b);
         }
 
-        getFragmentManager()
+        getSupportFragmentManager()
                 .beginTransaction()
                 .replace(android.R.id.content, f)
                 .commitAllowingStateLoss();
