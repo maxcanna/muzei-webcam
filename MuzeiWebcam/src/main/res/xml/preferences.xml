@@ -4,12 +4,12 @@
     <EditTextPreference android:title="@string/preference_title_name"
         android:key="@string/preference_key_name"
         android:icon="@drawable/ic_action_tag"
-        android:dialogTitle=""
+        android:dialogTitle="@string/preference_title_name"
         android:singleLine="true" />
     <EditTextPreference android:title="@string/preference_title_url"
         android:key="@string/preference_key_url"
         android:icon="@drawable/ic_action_link"
-        android:dialogTitle=""
+        android:dialogTitle="@string/preference_title_url"
         android:singleLine="true"
         android:inputType="textWebEditText" />
     <CheckBoxPreference android:title="@string/preference_title_grab_url"
