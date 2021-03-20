@@ -4,9 +4,18 @@
         <item name="android:windowShowWallpaper">true</item>
         <item name="android:windowBackground">@color/background_window</item>
         <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="colorAccent">@android:color/white</item>
+        <item name="android:alertDialogTheme">@style/MWTheme.AlertDialog</item>
+        <item name="alertDialogTheme">@style/MWTheme.AlertDialog</item>
         <item name="preferenceTheme">@style/MWTheme.PreferenceThemeOverlay</item>
     </style>
     <style name="MWTheme.PreferenceThemeOverlay" parent="@style/PreferenceThemeOverlay">
         <item name="android:layout">@layout/fragment_preference_list</item>
+    </style>
+    <style name="MWTheme.AlertDialog" parent="@style/Theme.AppCompat.Dialog.Alert">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:windowBackground">@color/background_alert</item>
     </style>
 </resources>
