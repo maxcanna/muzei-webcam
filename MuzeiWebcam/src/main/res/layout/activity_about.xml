@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--suppress AndroidUnknownAttribute, MissingPrefix -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -15,7 +16,6 @@
             android:textSize="32sp"
             android:paddingTop="10dp"
             android:text="@string/app_name"
-            tools:ignore="MissingPrefix"
             fontPath="fonts/Alegreya-BlackItalic.ttf" />
         <TextView
             android:layout_width="match_parent"
@@ -40,7 +40,6 @@
             android:textSize="20sp"
             android:padding="10dp"
             android:text="@string/about_contacts"
-            tools:ignore="MissingPrefix"
             fontPath="fonts/Alegreya-BlackItalic.ttf" />
         <LinearLayout
             android:orientation="horizontal"
