@@ -7,7 +7,7 @@ package net.luxteam.muzeiwebcam.ui.activity;
 //  Copyright (c) 2014 Muzei Webcam. All rights reserved.
 //
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -22,7 +22,7 @@ import net.luxteam.muzeiwebcam.R;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class AboutActivity extends Activity {
+public class AboutActivity extends AppCompatActivity {
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -38,7 +38,6 @@ public class AboutActivity extends Activity {
         TextView mCreditsTextView = (TextView) findViewById(R.id.about_credits);
         ImageView mTwitterImageView = (ImageView) findViewById(R.id.about_twitter);
         ImageView mFacebookImageView = (ImageView) findViewById(R.id.about_facebook);
-        ImageView mGplusImageView = (ImageView) findViewById(R.id.about_gplus);
         ImageView mGplayImageView = (ImageView) findViewById(R.id.about_gplay);
         ImageView mGithubImageView = (ImageView) findViewById(R.id.about_github);
 
@@ -57,14 +56,6 @@ public class AboutActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_facebook)));
-                startActivity(browserIntent);
-            }
-        });
-
-        mGplusImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_gplus)));
                 startActivity(browserIntent);
             }
         });

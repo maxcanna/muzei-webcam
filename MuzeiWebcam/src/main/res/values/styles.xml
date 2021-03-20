@@ -1,12 +1,21 @@
 <resources>
-    <style name="MWTheme" parent="android:Theme.Holo.NoActionBar">
+    <style name="MWTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowShowWallpaper">true</item>
         <item name="android:windowBackground">@color/background_window</item>
-        <item name="android:editTextBackground">@drawable/mwtheme_edit_text_holo_dark</item>
-        <item name="android:listChoiceIndicatorMultiple">@drawable/mwtheme_btn_check_holo_dark</item>
-        <item name="android:listChoiceBackgroundIndicator">@drawable/mwtheme_list_selector_holo_dark</item>
-        <item name="android:activatedBackgroundIndicator">@drawable/mwtheme_activated_background_holo_dark</item>
         <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="colorAccent">@android:color/white</item>
+        <item name="android:alertDialogTheme">@style/MWTheme.AlertDialog</item>
+        <item name="alertDialogTheme">@style/MWTheme.AlertDialog</item>
+        <item name="preferenceTheme">@style/MWTheme.PreferenceThemeOverlay</item>
+    </style>
+    <style name="MWTheme.PreferenceThemeOverlay" parent="@style/PreferenceThemeOverlay">
+        <item name="android:layout">@layout/fragment_preference_list</item>
+    </style>
+    <style name="MWTheme.AlertDialog" parent="@style/Theme.AppCompat.Dialog.Alert">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:windowBackground">@color/background_alert</item>
     </style>
 </resources>

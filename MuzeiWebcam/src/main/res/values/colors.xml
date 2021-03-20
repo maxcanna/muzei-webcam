@@ -2,5 +2,5 @@
 <resources>
     <color name="background_window">#22000000</color>
     <color name="background_content">#11ffffff</color>
-    <color name="sourceColor">#ffffff</color>
+    <color name="background_alert">#bbbbbb</color>
 </resources>

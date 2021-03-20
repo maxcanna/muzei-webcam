@@ -13,36 +13,40 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
-import android.preference.EditTextPreference;
-import android.preference.Preference;
-import android.preference.PreferenceFragment;
-import android.preference.PreferenceScreen;
+
+import androidx.preference.EditTextPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceScreen;
+
 import android.text.TextUtils;
 import android.util.Patterns;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.google.android.apps.muzei.api.provider.Artwork;
+import com.google.android.apps.muzei.api.provider.ProviderClient;
+import com.google.android.apps.muzei.api.provider.ProviderContract;
 
 import net.luxteam.muzeiwebcam.BuildConfig;
 import net.luxteam.muzeiwebcam.R;
-import net.luxteam.muzeiwebcam.api.WebcamArtSource;
 import net.luxteam.muzeiwebcam.ui.activity.AboutActivity;
 import net.luxteam.muzeiwebcam.utils.Utils;
 
-public class MWPreferenceFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener {
+import org.jetbrains.annotations.NotNull;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class MWPreferenceFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     public static final String EXTRA_URL = "extraUrl";
 
-    public MWPreferenceFragment() {
-    }
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        addPreferencesFromResource(R.xml.preferences);
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        setPreferencesFromResource(R.xml.preferences, rootKey);
     }
 
     @Override
@@ -72,12 +76,7 @@ public class MWPreferenceFragment extends PreferenceFragment implements SharedPr
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_preference_list, container, false);
-    }
-
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NotNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         TextView mAboutTextView = (TextView) view.findViewById(R.id.about);
@@ -104,11 +103,6 @@ public class MWPreferenceFragment extends PreferenceFragment implements SharedPr
                     active ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED : PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                     PackageManager.DONT_KILL_APP
             );
-        } else if(s.equals(a.getString(R.string.preference_key_interval))){
-            String interval = Utils.getStringValue(a, s);
-            if(TextUtils.isEmpty(interval)){
-                Utils.storeValue(a, s, "1");
-            }
         } else if(s.equals(a.getString(R.string.preference_key_url))){
             String url = Utils.getStringValue(a, s);
             if(TextUtils.isEmpty(url) || !Patterns.WEB_URL.matcher(url).matches()){
@@ -126,10 +120,20 @@ public class MWPreferenceFragment extends PreferenceFragment implements SharedPr
     }
 
     private void refresh(Context c) {
-        Intent i = new Intent(c,WebcamArtSource.class);
-        i.setAction(WebcamArtSource.ACTION_REFRESH);
+        final ProviderClient providerClient = ProviderContract.getProviderClient(c, "net.luxteam.muzeiwebcam");
+        final Date now = new Date();
+        final String subtitle = SimpleDateFormat.getInstance().format(now);
+        final String title = Utils.getStringValue(c, c.getString(R.string.preference_key_name));
+        final String url = Utils.getStringValue(c, c.getString(R.string.preference_key_url));
+        final Uri uri = Uri.parse(url);
 
-        c.startService(i);
+        providerClient.setArtwork(new Artwork.Builder()
+                .title(title)
+                .byline(subtitle)
+                .webUri(uri)
+                .token(String.valueOf(now.getTime()))
+                .persistentUri(uri)
+                .build());
     }
 
     private void updateSubtitles() {
