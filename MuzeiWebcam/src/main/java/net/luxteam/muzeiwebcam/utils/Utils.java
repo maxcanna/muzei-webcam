@@ -13,8 +13,9 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Handler;
 import android.os.Looper;
-import android.preference.PreferenceManager;
 import android.widget.Toast;
+
+import androidx.preference.PreferenceManager;
 
 public class Utils {
 
