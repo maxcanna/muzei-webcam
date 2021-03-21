@@ -11,30 +11,15 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Handler;
-import android.os.Looper;
 import android.widget.Toast;
 
 import androidx.preference.PreferenceManager;
 
 public class Utils {
 
-    private static Toast t;
-
     public static void showToast(final Context ctx, int resourceId){
         if(ctx == null) return;
-
-        final String message = ctx.getString(resourceId);
-
-        new Handler(Looper.getMainLooper()).post(new Runnable() {
-            public void run() {
-                if (t == null) {
-                    t = Toast.makeText(ctx, message, Toast.LENGTH_SHORT);
-                } else t.setText(message);
-
-                t.show();
-            }
-        });
+        Toast.makeText(ctx, ctx.getString(resourceId), Toast.LENGTH_SHORT).show();
     }
 
     public static void storeValue(Context ctx, String name, String value){
