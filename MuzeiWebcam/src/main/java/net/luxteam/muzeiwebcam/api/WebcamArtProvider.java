@@ -42,6 +42,7 @@ public class WebcamArtProvider extends MuzeiArtProvider {
         if(TextUtils.isEmpty(url)){
             url = ctx.getString(R.string.source_default_url);
             viewUrl = ctx.getString(R.string.source_default_view_url);
+            title = ctx.getString(R.string.app_name);
             subtitle = ctx.getString(R.string.source_default_subtitle);
         }
 
