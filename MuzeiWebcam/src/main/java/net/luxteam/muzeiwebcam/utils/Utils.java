@@ -48,8 +48,12 @@ public class Utils {
     }
 
     public static String getStringValue(Context ctx, String name){
+        return getStringValue(ctx, name, null);
+    }
+
+    public static String getStringValue(Context ctx, String name, String defValue){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-        return prefs.getString(name, null);
+        return prefs.getString(name, defValue);
     }
 
     public static boolean isWifiConnected(Context ctx) {
