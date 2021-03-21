@@ -9,8 +9,6 @@ package net.luxteam.muzeiwebcam.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.widget.Toast;
 
 import androidx.preference.PreferenceManager;
@@ -39,11 +37,5 @@ public class Utils {
     public static String getStringValue(Context ctx, String name, String defValue){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
         return prefs.getString(name, defValue);
-    }
-
-    public static boolean isWifiConnected(Context ctx) {
-        ConnectivityManager connManager = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        return  mWifi.isConnected();
     }
 }
