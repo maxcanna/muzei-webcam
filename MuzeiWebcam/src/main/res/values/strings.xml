@@ -14,13 +14,12 @@
     <string name="preference_title_interval">Refresh interval (minutes)</string>
     <string name="preference_summary_wifi_only">Download new images only on WiFi</string>
     <string name="preference_summary_grab_url">Share an URL to use it as source</string>
-    <string name="about_credits"><![CDATA[<b>Default image</b> by <em>me</em><br />https://www.flickr.com/photos/maxcanna/<br /><br /><b>Muzei</b> by <em>Roman Nurik</em><br />https://github.com/romannurik/muzei<br /><br /><b>Calligraphy</b> by <em>Christopher Jenkins</em><br />https://github.com/chrisjenx/Calligraphy]]></string>
+    <string name="about_credits"><![CDATA[<b>Default image</b> by <em>me</em><br />https://www.flickr.com/photos/maxcanna/<br /><br /><b>Muzei</b> by <em>Ian Lake</em><br />https://github.com/muzei/muzei<br /><br /><b>Calligraphy</b> by <em>Christopher Jenkins</em><br />https://github.com/chrisjenx/Calligraphy]]></string>
     <string name="about_credits_title">Credits</string>
     <string name="about_description">Muzei Live Wallpaper extension created by Massimiliano Cannarozzo to show webcam imagery as wallpaper.</string>
     <string name="about_contacts">Contacts</string>
     <string translatable="false" name="content_description_twitter">Twitter</string>
     <string translatable="false" name="content_description_facebook">Facebook</string>
-    <string translatable="false" name="content_description_gplus">Google+</string>
     <string translatable="false" name="content_description_gplay">Google Play</string>
     <string translatable="false" name="content_description_github">GitHub</string>
 </resources>

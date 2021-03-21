@@ -14,7 +14,7 @@
     <string name="preference_title_interval">Aktualisierungsintervall (minuten)</string>
     <string name="preference_summary_wifi_only">Laden sie neue bilder nur über WiFi</string>
     <string name="preference_summary_grab_url">Teilen sie eine URL als quelle verwenden</string>
-    <string name="about_credits"><![CDATA[<b>Standardbild</b> von <em>mich</em><br />https://www.flickr.com/photos/maxcanna/<br /><br /><b>Muzei</b> von <em>Roman Nurik</em><br />https://github.com/romannurik/muzei<br /><br /><b>Calligraphy</b> von <em>Christopher Jenkins</em><br />https://github.com/chrisjenx/Calligraphy]]></string>
+    <string name="about_credits"><![CDATA[<b>Standardbild</b> von <em>mich</em><br />https://www.flickr.com/photos/maxcanna/<br /><br /><b>Muzei</b> von <em>Ian Lake</em><br />https://github.com/muzei/muzei<br /><br /><b>Calligraphy</b> von <em>Christopher Jenkins</em><br />https://github.com/chrisjenx/Calligraphy]]></string>
     <string name="about_credits_title">Verdienst</string>
     <string name="about_description">Muzei erweiterung erstellt von Massimiliano Cannarozzo um anzeigen webcam-bilder als hintergrundbild.</string>
     <string name="about_contacts">Kontakte</string>
