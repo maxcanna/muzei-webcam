@@ -62,6 +62,7 @@ public class MWPreferenceFragment extends PreferenceFragmentCompat implements Sh
             final String url = getArguments().getString(EXTRA_URL);
             if(!TextUtils.isEmpty(url) && Patterns.WEB_URL.matcher(url).matches()){
                 Utils.storeValue(a, getString(R.string.preference_key_url), url);
+                updateSubtitles();
             } else {
                 Utils.showToast(a , R.string.error_invalid_url);
             }
