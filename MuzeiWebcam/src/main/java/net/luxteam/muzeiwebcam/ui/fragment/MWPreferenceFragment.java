@@ -62,6 +62,7 @@ public class MWPreferenceFragment extends PreferenceFragmentCompat implements Sh
             final String url = getArguments().getString(EXTRA_URL);
             if(!TextUtils.isEmpty(url) && Patterns.WEB_URL.matcher(url).matches()){
                 Utils.storeValue(a, getString(R.string.preference_key_url), url);
+                updateSubtitles();
             } else {
                 Utils.showToast(a , R.string.error_invalid_url);
             }
@@ -79,7 +80,7 @@ public class MWPreferenceFragment extends PreferenceFragmentCompat implements Sh
     public void onViewCreated(@NotNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        TextView mAboutTextView = (TextView) view.findViewById(R.id.about);
+        TextView mAboutTextView = view.findViewById(R.id.about);
         mAboutTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,14 +107,11 @@ public class MWPreferenceFragment extends PreferenceFragmentCompat implements Sh
         } else if(s.equals(a.getString(R.string.preference_key_url))){
             String url = Utils.getStringValue(a, s);
             if(TextUtils.isEmpty(url) || !Patterns.WEB_URL.matcher(url).matches()){
-                if(!TextUtils.isEmpty(url)){
-                    Utils.storeValue(a, s, null);
-                } else {
-                    Utils.showToast(a, R.string.error_invalid_url);
-                }
-            } else {
-                refresh(a);
+                Utils.showToast(a, R.string.error_invalid_url);
+                Utils.storeValue(a, s, null);
             }
+
+            refresh(a);
         }
           
         updateSubtitles();
@@ -123,8 +121,8 @@ public class MWPreferenceFragment extends PreferenceFragmentCompat implements Sh
         final ProviderClient providerClient = ProviderContract.getProviderClient(c, "net.luxteam.muzeiwebcam");
         final Date now = new Date();
         final String subtitle = SimpleDateFormat.getInstance().format(now);
-        final String title = Utils.getStringValue(c, c.getString(R.string.preference_key_name));
-        final String url = Utils.getStringValue(c, c.getString(R.string.preference_key_url));
+        final String title = Utils.getStringValue(c, c.getString(R.string.preference_key_name), c.getString(R.string.app_name));
+        final String url = Utils.getStringValue(c, c.getString(R.string.preference_key_url), c.getString(R.string.source_default_url));
         final Uri uri = Uri.parse(url);
 
         providerClient.setArtwork(new Artwork.Builder()

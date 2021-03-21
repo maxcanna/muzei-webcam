@@ -35,17 +35,14 @@ public class WebcamArtProvider extends MuzeiArtProvider {
 
         Context ctx = this.getContext();
         String subtitle = SimpleDateFormat.getInstance().format(now);
-        String title = Utils.getStringValue(ctx, ctx.getString(R.string.preference_key_name));
+        String title = Utils.getStringValue(ctx, ctx.getString(R.string.preference_key_name), ctx.getString(R.string.app_name));
         String url = Utils.getStringValue(ctx, ctx.getString(R.string.preference_key_url));
         String viewUrl = url;
-
-        if(TextUtils.isEmpty(title)){
-            title = ctx.getString(R.string.app_name);
-        }
 
         if(TextUtils.isEmpty(url)){
             url = ctx.getString(R.string.source_default_url);
             viewUrl = ctx.getString(R.string.source_default_view_url);
+            title = ctx.getString(R.string.app_name);
             subtitle = ctx.getString(R.string.source_default_subtitle);
         }
 
@@ -54,7 +51,6 @@ public class WebcamArtProvider extends MuzeiArtProvider {
                 .byline(subtitle)
                 .webUri(Uri.parse(viewUrl))
                 .persistentUri(Uri.parse(url))
-                .metadata(String.valueOf(now.getTime()))
                 .build();
         setArtwork(artwork);
     }
@@ -63,9 +59,12 @@ public class WebcamArtProvider extends MuzeiArtProvider {
     @Override
     public String getDescription() {
         final Context ctx = getContext();
-        String url = Utils.getStringValue(ctx, ctx.getString(R.string.preference_key_url));
-        return  url == null
+        return  TextUtils.isEmpty(Utils.getStringValue(ctx, ctx.getString(R.string.preference_key_url)))
                 ? ctx.getString(R.string.source_default_subtitle)
-                : null;
+                : Utils.getStringValue(
+                    ctx,
+                    ctx.getString(R.string.preference_key_name),
+                    ctx.getString(R.string.source_description)
+                    );
     }
 }

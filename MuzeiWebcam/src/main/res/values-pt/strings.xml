@@ -14,7 +14,7 @@
     <string name="preference_title_interval">Intervalo de atualização (minutos)</string>
     <string name="preference_summary_wifi_only">Descarregue novas imagens somente via Wi-Fi</string>
     <string name="preference_summary_grab_url">Compartilhar uma URL para usá-lo como fonte</string>
-    <string name="about_credits"><![CDATA[<b>Imagem predefinida</b> por <em>me</em><br />https://www.flickr.com/photos/maxcanna/<br /><br /><b>Muzei</b> por <em>Roman Nurik</em><br />https://github.com/romannurik/muzei<br /><br /><b>Calligraphy</b> por <em>Christopher Jenkins</em><br />https://github.com/chrisjenx/Calligraphy]]></string>
+    <string name="about_credits"><![CDATA[<b>Imagem predefinida</b> por <em>me</em><br />https://www.flickr.com/photos/maxcanna/<br /><br /><b>Muzei</b> por <em>Ian Lake</em><br />https://github.com/muzei/muzei<br /><br /><b>Calligraphy</b> por <em>Christopher Jenkins</em><br />https://github.com/chrisjenx/Calligraphy]]></string>
     <string name="about_credits_title">Créditos</string>
     <string name="about_description">Extensão para Muzei criado por Massimiliano Cannarozzo para mostrar imagens de webcams como papel de parede.</string>
     <string name="about_contacts">Contactos</string>

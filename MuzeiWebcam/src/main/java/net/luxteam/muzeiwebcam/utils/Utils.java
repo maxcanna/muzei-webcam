@@ -9,31 +9,15 @@ package net.luxteam.muzeiwebcam.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.Handler;
-import android.os.Looper;
-import android.preference.PreferenceManager;
 import android.widget.Toast;
+
+import androidx.preference.PreferenceManager;
 
 public class Utils {
 
-    private static Toast t;
-
     public static void showToast(final Context ctx, int resourceId){
         if(ctx == null) return;
-
-        final String message = ctx.getString(resourceId);
-
-        new Handler(Looper.getMainLooper()).post(new Runnable() {
-            public void run() {
-                if (t == null) {
-                    t = Toast.makeText(ctx, message, Toast.LENGTH_SHORT);
-                } else t.setText(message);
-
-                t.show();
-            }
-        });
+        Toast.makeText(ctx, ctx.getString(resourceId), Toast.LENGTH_SHORT).show();
     }
 
     public static void storeValue(Context ctx, String name, String value){
@@ -47,13 +31,11 @@ public class Utils {
     }
 
     public static String getStringValue(Context ctx, String name){
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-        return prefs.getString(name, null);
+        return getStringValue(ctx, name, null);
     }
 
-    public static boolean isWifiConnected(Context ctx) {
-        ConnectivityManager connManager = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        return  mWifi.isConnected();
+    public static String getStringValue(Context ctx, String name, String defValue){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+        return prefs.getString(name, defValue);
     }
 }
