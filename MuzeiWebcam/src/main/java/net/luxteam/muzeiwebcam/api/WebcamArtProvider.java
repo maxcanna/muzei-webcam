@@ -54,7 +54,6 @@ public class WebcamArtProvider extends MuzeiArtProvider {
                 .byline(subtitle)
                 .webUri(Uri.parse(viewUrl))
                 .persistentUri(Uri.parse(url))
-                .metadata(String.valueOf(now.getTime()))
                 .build();
         setArtwork(artwork);
     }
