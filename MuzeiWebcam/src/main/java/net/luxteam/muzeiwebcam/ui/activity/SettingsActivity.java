@@ -14,7 +14,6 @@ import android.os.Bundle;
 import net.luxteam.muzeiwebcam.ui.fragment.MWPreferenceFragment;
 
 import androidx.fragment.app.FragmentActivity;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SettingsActivity extends FragmentActivity {
 
@@ -35,10 +34,5 @@ public class SettingsActivity extends FragmentActivity {
                 .beginTransaction()
                 .replace(android.R.id.content, f)
                 .commitAllowingStateLoss();
-    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(new CalligraphyContextWrapper(newBase));
     }
 }
