@@ -79,7 +79,7 @@ public class MWPreferenceFragment extends PreferenceFragmentCompat implements Sh
     public void onViewCreated(@NotNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        TextView mAboutTextView = (TextView) view.findViewById(R.id.about);
+        TextView mAboutTextView = view.findViewById(R.id.about);
         mAboutTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
