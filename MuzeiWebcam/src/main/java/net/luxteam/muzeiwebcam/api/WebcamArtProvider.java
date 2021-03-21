@@ -61,6 +61,10 @@ public class WebcamArtProvider extends MuzeiArtProvider {
         String url = Utils.getStringValue(ctx, ctx.getString(R.string.preference_key_url));
         return  url == null
                 ? ctx.getString(R.string.source_default_subtitle)
-                : null;
+                : Utils.getStringValue(
+                    ctx,
+                    ctx.getString(R.string.preference_key_name),
+                    ctx.getString(R.string.source_description)
+                    );
     }
 }
