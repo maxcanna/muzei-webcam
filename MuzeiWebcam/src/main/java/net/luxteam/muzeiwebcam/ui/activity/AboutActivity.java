@@ -20,14 +20,7 @@ import android.widget.TextView;
 import net.luxteam.muzeiwebcam.BuildConfig;
 import net.luxteam.muzeiwebcam.R;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
-
 public class AboutActivity extends AppCompatActivity {
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(new CalligraphyContextWrapper(newBase));
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

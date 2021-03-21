@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 def versionMajor = 2
-def versionMinor = 1
-def versionPatch = 1
+def versionMinor = 2
+def versionPatch = 0
 def versionBuild = 0
 
 android {
@@ -18,11 +18,10 @@ android {
 }
 
 task getVersionNumber{
-    file("./versionNumber").text = "${versionMajor}.${versionMinor}.${versionPatch}"
+    file("./versionNumber").text = "v${versionMajor}.${versionMinor}.${versionPatch}"
 }
 
 dependencies {
     implementation 'com.google.android.apps.muzei:muzei-api:3.4.0'
-    implementation 'uk.co.chrisjenx:calligraphy:1.2.0'
     implementation 'androidx.preference:preference:1.1.1'
 }

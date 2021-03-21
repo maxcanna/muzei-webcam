@@ -14,7 +14,7 @@
     <string name="preference_title_interval">Intervallo aggiornamento (minuti)</string>
     <string name="preference_summary_wifi_only">Scarica nuove immagini solo in WiFi</string>
     <string name="preference_summary_grab_url">Condividi un\'URL per usarla come fonte</string>
-    <string name="about_credits"><![CDATA[<b>Immagine predefinita</b> <em>mia</em><br />https://www.flickr.com/photos/maxcanna/<br /><br /><b>Muzei</b> di <em>Ian Lake</em><br />https://github.com/muzei/muzei<br /><br /><b>Calligraphy</b> di <em>Christopher Jenkins</em><br />https://github.com/chrisjenx/Calligraphy]]></string>
+    <string name="about_credits"><![CDATA[<b>Immagine predefinita</b> <em>mia</em><br />https://www.flickr.com/photos/maxcanna<br /><br /><b>Muzei</b> di <em>Ian Lake</em><br />https://github.com/muzei/muzei]]></string>
     <string name="about_credits_title">Crediti</string>
     <string name="about_description">Estensione per il Live Wallpaper Muzei creata da Massimiliano Cannarozzo per visualizzare immagini di una webcam come sfondo.</string>
     <string name="about_contacts">Contatti</string>

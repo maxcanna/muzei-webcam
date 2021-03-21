@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--suppress AndroidUnknownAttribute, MissingPrefix -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -12,7 +11,7 @@
         android:textSize="32sp"
         android:padding="10dp"
         android:text="@string/app_name"
-        fontPath="fonts/Alegreya-BlackItalic.ttf"
+        android:fontFamily="@font/alegreya_black_italic"
         android:drawableEnd="@drawable/ic_action_info"
         android:drawablePadding="-33dp"
         android:id="@+id/about" />
