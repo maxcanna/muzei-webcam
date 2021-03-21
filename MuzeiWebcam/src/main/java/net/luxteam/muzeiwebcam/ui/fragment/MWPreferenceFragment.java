@@ -123,7 +123,7 @@ public class MWPreferenceFragment extends PreferenceFragmentCompat implements Sh
         final ProviderClient providerClient = ProviderContract.getProviderClient(c, "net.luxteam.muzeiwebcam");
         final Date now = new Date();
         final String subtitle = SimpleDateFormat.getInstance().format(now);
-        final String title = Utils.getStringValue(c, c.getString(R.string.preference_key_name));
+        final String title = Utils.getStringValue(c, c.getString(R.string.preference_key_name), c.getString(R.string.app_name));
         final String url = Utils.getStringValue(c, c.getString(R.string.preference_key_url), c.getString(R.string.source_default_url));
         final Uri uri = Uri.parse(url);
 

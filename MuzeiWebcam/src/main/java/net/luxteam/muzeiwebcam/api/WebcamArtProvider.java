@@ -35,13 +35,9 @@ public class WebcamArtProvider extends MuzeiArtProvider {
 
         Context ctx = this.getContext();
         String subtitle = SimpleDateFormat.getInstance().format(now);
-        String title = Utils.getStringValue(ctx, ctx.getString(R.string.preference_key_name));
+        String title = Utils.getStringValue(ctx, ctx.getString(R.string.preference_key_name), ctx.getString(R.string.app_name));
         String url = Utils.getStringValue(ctx, ctx.getString(R.string.preference_key_url));
         String viewUrl = url;
-
-        if(TextUtils.isEmpty(title)){
-            title = ctx.getString(R.string.app_name);
-        }
 
         if(TextUtils.isEmpty(url)){
             url = ctx.getString(R.string.source_default_url);
