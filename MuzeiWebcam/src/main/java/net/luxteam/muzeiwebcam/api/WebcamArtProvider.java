@@ -59,8 +59,7 @@ public class WebcamArtProvider extends MuzeiArtProvider {
     @Override
     public String getDescription() {
         final Context ctx = getContext();
-        String url = Utils.getStringValue(ctx, ctx.getString(R.string.preference_key_url));
-        return  url == null
+        return  TextUtils.isEmpty(Utils.getStringValue(ctx, ctx.getString(R.string.preference_key_url)))
                 ? ctx.getString(R.string.source_default_subtitle)
                 : Utils.getStringValue(
                     ctx,
