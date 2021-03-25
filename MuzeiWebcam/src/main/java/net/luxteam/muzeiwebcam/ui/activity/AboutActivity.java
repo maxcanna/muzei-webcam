@@ -7,8 +7,6 @@ package net.luxteam.muzeiwebcam.ui.activity;
 //  Copyright (c) 2014 Muzei Webcam. All rights reserved.
 //
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,6 +17,8 @@ import android.widget.TextView;
 
 import net.luxteam.muzeiwebcam.BuildConfig;
 import net.luxteam.muzeiwebcam.R;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AboutActivity extends AppCompatActivity {
 

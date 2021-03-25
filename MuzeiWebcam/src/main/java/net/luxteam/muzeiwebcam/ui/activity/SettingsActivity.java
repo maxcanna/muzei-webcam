@@ -7,7 +7,6 @@ package net.luxteam.muzeiwebcam.ui.activity;
 //  Copyright (c) 2014 Muzei Webcam. All rights reserved.
 //
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
