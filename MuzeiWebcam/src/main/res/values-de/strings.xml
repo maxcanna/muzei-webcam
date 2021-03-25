@@ -6,13 +6,9 @@
     <string name="source_description">Verwenden sie Webcam-Bilder</string>
     <string name="source_default_subtitle">Stellen sie eine bild-URL zu starten</string>
     <string name="error_invalid_url">Ungültige URL</string>
-    <string name="command_refresh">Aktualisieren</string>
     <string name="preference_title_url">URL</string>
     <string name="preference_title_name">Name</string>
-    <string name="preference_title_wifi_only">Nur WiFi</string>
     <string name="preference_title_grab_url">Schnappen URL</string>
-    <string name="preference_title_interval">Aktualisierungsintervall (minuten)</string>
-    <string name="preference_summary_wifi_only">Laden sie neue bilder nur über WiFi</string>
     <string name="preference_summary_grab_url">Teilen sie eine URL als quelle verwenden</string>
     <string name="about_credits"><![CDATA[<b>Standardbild</b> von <em>mich</em><br />https://www.flickr.com/photos/maxcanna<br /><br /><b>Muzei</b> von <em>Ian Lake</em><br />https://github.com/muzei/muzei]]></string>
     <string name="about_credits_title">Verdienst</string>
