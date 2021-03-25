@@ -27,12 +27,12 @@ public class AboutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        TextView mVersionTextView = (TextView) findViewById(R.id.about_version);
-        TextView mCreditsTextView = (TextView) findViewById(R.id.about_credits);
-        ImageView mTwitterImageView = (ImageView) findViewById(R.id.about_twitter);
-        ImageView mFacebookImageView = (ImageView) findViewById(R.id.about_facebook);
-        ImageView mGplayImageView = (ImageView) findViewById(R.id.about_gplay);
-        ImageView mGithubImageView = (ImageView) findViewById(R.id.about_github);
+        TextView mVersionTextView = findViewById(R.id.about_version);
+        TextView mCreditsTextView = findViewById(R.id.about_credits);
+        ImageView mTwitterImageView = findViewById(R.id.about_twitter);
+        ImageView mFacebookImageView = findViewById(R.id.about_facebook);
+        ImageView mGplayImageView = findViewById(R.id.about_gplay);
+        ImageView mGithubImageView = findViewById(R.id.about_github);
 
         mVersionTextView.setText(BuildConfig.VERSION_NAME);
         mCreditsTextView.setText(Html.fromHtml(getString(R.string.about_credits)));
