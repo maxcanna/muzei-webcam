@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 def versionMajor = 2
 def versionMinor = 2
@@ -24,4 +25,5 @@ task getVersionNumber{
 dependencies {
     implementation 'com.google.android.apps.muzei:muzei-api:3.4.0'
     implementation 'androidx.preference:preference:1.1.1'
+    implementation 'com.google.firebase:firebase-analytics:18.0.2'
 }
