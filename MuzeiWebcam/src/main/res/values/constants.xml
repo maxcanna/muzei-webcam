@@ -2,7 +2,6 @@
 <resources>
     <string translatable="false" name="source_default_url">https://muzeiwebcam.page.link/jpg</string>
     <string translatable="false" name="source_default_view_url">https://muzeiwebcam.page.link/flickr</string>
-    <string translatable="false" name="source_default_interval">1</string>
     <string translatable="false" name="url_contacts_twitter">https://muzeiwebcam.page.link/twitter</string>
     <string translatable="false" name="url_contacts_facebook">https://muzeiwebcam.page.link/facebook</string>
     <string translatable="false" name="url_contacts_gplay">https://muzeiwebcam.page.link/play</string>
@@ -10,7 +9,4 @@
     <string translatable="false" name="preference_key_url">imageUrl</string>
     <string translatable="false" name="preference_key_name">imageName</string>
     <string translatable="false" name="preference_key_grab_url">grabUrl</string>
-    <string translatable="false" name="ga_trackingId" />
-    <bool name="ga_autoActivityTracking">true</bool>
-    <bool name="ga_reportUncaughtExceptions">true</bool>
 </resources>
