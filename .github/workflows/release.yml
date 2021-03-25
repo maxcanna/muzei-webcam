@@ -32,7 +32,7 @@ jobs:
         run: |
           ./gradlew getVersionNumber
           echo VERSION_NUMBER=$(cat MuzeiWebcam/versionNumber) >> $GITHUB_ENV
-          echo APK_NAME=$(cat MuzeiWebcam/versionNumber | cut -c 1-5) >> $GITHUB_ENV
+          echo APK_NAME=$(cat MuzeiWebcam/versionNumber | cut -c 2-6) >> $GITHUB_ENV
           echo 'RELEASE_NOTES<<EOF' >> $GITHUB_ENV
           git log --reverse --no-merges --format='- %s' $(git log --merges --format='%H' -n 2)..HEAD -- >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
