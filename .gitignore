@@ -8,5 +8,6 @@
 /MuzeiWebcam/build/
 *.iml
 com_crashlytics_export_strings.xml
-/MuzeiWebcam/src/main/assets/crashlytics-build.properties
+MuzeiWebcam/src/main/assets/crashlytics-build.properties
 MuzeiWebcam/versionNumber
+MuzeiWebcam/google-services.json
