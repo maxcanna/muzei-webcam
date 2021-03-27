@@ -25,6 +25,8 @@ jobs:
           path: ~/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
+      - name: Get google-services.json
+        run:  echo ${{ secrets.GOOGLE_SERVICES_JSON }} | base64 -d > MuzeiWebcam/google-services.json
       - name: Build
         run: |
           ./gradlew assembleRelease
