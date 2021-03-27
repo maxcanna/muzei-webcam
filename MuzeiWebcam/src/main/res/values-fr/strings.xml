@@ -6,13 +6,9 @@
     <string name="source_description">Utiliser des images de webcam</string>
     <string name="source_default_subtitle">Choisissez une image pour commencer</string>
     <string name="error_invalid_url">URL invalide</string>
-    <string name="command_refresh">Actualiser</string>
     <string name="preference_title_url">URL</string>
     <string name="preference_title_name">Nom</string>
-    <string name="preference_title_wifi_only">WiFi seulement</string>
     <string name="preference_title_grab_url">Attraper URL</string>
-    <string name="preference_title_interval">Intervalle d\'actualisation (minutes)</string>
-    <string name="preference_summary_wifi_only">Télécharger de nouvelles images uniquement en WiFi</string>
     <string name="preference_summary_grab_url">Partagez une URL pour l\'utiliser</string>
     <string name="about_credits"><![CDATA[<b>Image par défaut</b> par <em>me</em><br />https://www.flickr.com/photos/maxcanna<br /><br /><b>Muzei</b> par <em>Ian Lake</em><br />https://github.com/muzei/muzei]]></string>
     <string name="about_credits_title">Reconnaissances</string>

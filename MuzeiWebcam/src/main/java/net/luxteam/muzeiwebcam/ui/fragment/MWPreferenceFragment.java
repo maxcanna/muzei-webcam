@@ -15,12 +15,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.preference.EditTextPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.PreferenceScreen;
-
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
@@ -29,6 +23,7 @@ import android.widget.TextView;
 import com.google.android.apps.muzei.api.provider.Artwork;
 import com.google.android.apps.muzei.api.provider.ProviderClient;
 import com.google.android.apps.muzei.api.provider.ProviderContract;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import net.luxteam.muzeiwebcam.BuildConfig;
 import net.luxteam.muzeiwebcam.R;
@@ -39,6 +34,11 @@ import org.jetbrains.annotations.NotNull;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import androidx.preference.EditTextPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceScreen;
 
 public class MWPreferenceFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -93,9 +93,13 @@ public class MWPreferenceFragment extends PreferenceFragmentCompat implements Sh
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
 
         final Activity a = getActivity();
+        final FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(a);
+        final Bundle bundle = new Bundle();
+        bundle.putString("preference_name",  s);
 
         if(s.equals(a.getString(R.string.preference_key_grab_url))){
             boolean active = Utils.getBooleanValue(a, s);
+            bundle.putString("preference_value",  String.valueOf(active));
 
             PackageManager pm = a.getPackageManager();
 
@@ -104,8 +108,13 @@ public class MWPreferenceFragment extends PreferenceFragmentCompat implements Sh
                     active ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED : PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                     PackageManager.DONT_KILL_APP
             );
+        } else if(s.equals(a.getString(R.string.preference_key_name))){
+            String name = Utils.getStringValue(a, s);
+            bundle.putString("preference_value",  name);
         } else if(s.equals(a.getString(R.string.preference_key_url))){
             String url = Utils.getStringValue(a, s);
+            bundle.putString("preference_value",  url);
+
             if(TextUtils.isEmpty(url) || !Patterns.WEB_URL.matcher(url).matches()){
                 Utils.showToast(a, R.string.error_invalid_url);
                 Utils.storeValue(a, s, null);
@@ -115,6 +124,8 @@ public class MWPreferenceFragment extends PreferenceFragmentCompat implements Sh
         }
           
         updateSubtitles();
+
+        mFirebaseAnalytics.logEvent("preference_changed", bundle);
     }
 
     private void refresh(Context c) {
@@ -124,6 +135,7 @@ public class MWPreferenceFragment extends PreferenceFragmentCompat implements Sh
         final String title = Utils.getStringValue(c, c.getString(R.string.preference_key_name), c.getString(R.string.app_name));
         final String url = Utils.getStringValue(c, c.getString(R.string.preference_key_url), c.getString(R.string.source_default_url));
         final Uri uri = Uri.parse(url);
+        final FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(c);
 
         providerClient.setArtwork(new Artwork.Builder()
                 .title(title)
@@ -132,6 +144,11 @@ public class MWPreferenceFragment extends PreferenceFragmentCompat implements Sh
                 .token(String.valueOf(now.getTime()))
                 .persistentUri(uri)
                 .build());
+
+        final Bundle bundle = new Bundle();
+        bundle.putString("title",  title);
+        bundle.putString("url",  url);
+        mFirebaseAnalytics.logEvent("set_artwork", bundle);
     }
 
     private void updateSubtitles() {

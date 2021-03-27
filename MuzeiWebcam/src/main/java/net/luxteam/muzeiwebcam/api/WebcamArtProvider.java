@@ -9,10 +9,12 @@ package net.luxteam.muzeiwebcam.api;
 
 import android.content.Context;
 import android.net.Uri;
+import android.os.Bundle;
 import android.text.TextUtils;
 
 import com.google.android.apps.muzei.api.provider.Artwork;
 import com.google.android.apps.muzei.api.provider.MuzeiArtProvider;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import net.luxteam.muzeiwebcam.R;
 import net.luxteam.muzeiwebcam.utils.Utils;
@@ -34,6 +36,8 @@ public class WebcamArtProvider extends MuzeiArtProvider {
         }
 
         Context ctx = this.getContext();
+        final FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(ctx);
+
         String subtitle = SimpleDateFormat.getInstance().format(now);
         String title = Utils.getStringValue(ctx, ctx.getString(R.string.preference_key_name), ctx.getString(R.string.app_name));
         String url = Utils.getStringValue(ctx, ctx.getString(R.string.preference_key_url));
@@ -53,6 +57,12 @@ public class WebcamArtProvider extends MuzeiArtProvider {
                 .persistentUri(Uri.parse(url))
                 .build();
         setArtwork(artwork);
+
+        final Bundle bundle = new Bundle();
+        bundle.putString("title",  title);
+        bundle.putString("url",  url);
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS,  getClass().getSimpleName());
+        mFirebaseAnalytics.logEvent("set_artwork", bundle);
     }
 
     @NotNull

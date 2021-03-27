@@ -7,8 +7,6 @@ package net.luxteam.muzeiwebcam.ui.activity;
 //  Copyright (c) 2014 Muzei Webcam. All rights reserved.
 //
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,22 +15,28 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import net.luxteam.muzeiwebcam.BuildConfig;
 import net.luxteam.muzeiwebcam.R;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class AboutActivity extends AppCompatActivity {
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        TextView mVersionTextView = (TextView) findViewById(R.id.about_version);
-        TextView mCreditsTextView = (TextView) findViewById(R.id.about_credits);
-        ImageView mTwitterImageView = (ImageView) findViewById(R.id.about_twitter);
-        ImageView mFacebookImageView = (ImageView) findViewById(R.id.about_facebook);
-        ImageView mGplayImageView = (ImageView) findViewById(R.id.about_gplay);
-        ImageView mGithubImageView = (ImageView) findViewById(R.id.about_github);
+        TextView mVersionTextView = findViewById(R.id.about_version);
+        TextView mCreditsTextView = findViewById(R.id.about_credits);
+        ImageView mTwitterImageView = findViewById(R.id.about_twitter);
+        ImageView mFacebookImageView = findViewById(R.id.about_facebook);
+        ImageView mGplayImageView = findViewById(R.id.about_gplay);
+        ImageView mGithubImageView = findViewById(R.id.about_github);
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         mVersionTextView.setText(BuildConfig.VERSION_NAME);
         mCreditsTextView.setText(Html.fromHtml(getString(R.string.about_credits)));
@@ -42,6 +46,7 @@ public class AboutActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_twitter)));
                 startActivity(browserIntent);
+                trackContactEvent("twitter");
             }
         });
 
@@ -50,6 +55,7 @@ public class AboutActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_facebook)));
                 startActivity(browserIntent);
+                trackContactEvent("facebook");
             }
         });
 
@@ -58,6 +64,7 @@ public class AboutActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_gplay)));
                 startActivity(browserIntent);
+                trackContactEvent("play");
             }
         });
 
@@ -66,7 +73,14 @@ public class AboutActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_github)));
                 startActivity(browserIntent);
+                trackContactEvent("gh");
             }
         });
+    }
+
+    private void trackContactEvent(String contactName) {
+        final Bundle bundle = new Bundle();
+        bundle.putString("contact",  contactName);
+        mFirebaseAnalytics.logEvent("open_contact", bundle);
     }
 }

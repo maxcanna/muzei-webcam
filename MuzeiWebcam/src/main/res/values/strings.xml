@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Muzei Webcam</string>
     <string name="source_name">Webcam</string>
     <string name="source_description">Use webcam images</string>
     <string name="source_default_subtitle">Set an image URL to start</string>
     <string name="error_invalid_url">Invalid URL</string>
-    <string name="command_refresh">Refresh</string>
     <string name="preference_title_url">URL</string>
     <string name="preference_title_name">Name</string>
-    <string name="preference_title_wifi_only">WiFi only</string>
     <string name="preference_title_grab_url">Grab URLs</string>
-    <string name="preference_title_interval">Refresh interval (minutes)</string>
-    <string name="preference_summary_wifi_only">Download new images only on WiFi</string>
     <string name="preference_summary_grab_url">Share an URL to use it as source</string>
     <string name="about_credits"><![CDATA[<b>Default image</b> by <em>me</em><br />https://www.flickr.com/photos/maxcanna<br /><br /><b>Muzei</b> by <em>Ian Lake</em><br />https://github.com/muzei/muzei]]></string>
     <string name="about_credits_title">Credits</string>
