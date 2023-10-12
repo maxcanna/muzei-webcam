@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string translatable="false" name="source_default_url">https://muzeiwebcam.page.link/jpg</string>
-    <string translatable="false" name="source_default_view_url">https://muzeiwebcam.page.link/flickr</string>
-    <string translatable="false" name="url_contacts_twitter">https://muzeiwebcam.page.link/twitter</string>
-    <string translatable="false" name="url_contacts_facebook">https://muzeiwebcam.page.link/facebook</string>
-    <string translatable="false" name="url_contacts_gplay">https://muzeiwebcam.page.link/play</string>
-    <string translatable="false" name="url_contacts_github">https://muzeiwebcam.page.link/gh</string>
+    <string translatable="false" name="source_default_url">https://farm6.staticflickr.com/5517/9695349180_528b3df7d0_b.jpg</string>
+    <string translatable="false" name="source_default_view_url">https://www.flickr.com/photos/maxcanna/</string>
+    <string translatable="false" name="url_contacts_twitter">https://twitter.com/maxcannamc</string>
+    <string translatable="false" name="url_contacts_facebook">https://www.facebook.com/maxcanna</string>
+    <string translatable="false" name="url_contacts_gplay">https://play.google.com/store/apps/developer?id=Massimiliano+Cannarozzo</string>
+    <string translatable="false" name="url_contacts_github">https://github.com/maxcanna/muzei-webcam</string>
     <string translatable="false" name="preference_key_url">imageUrl</string>
     <string translatable="false" name="preference_key_name">imageName</string>
     <string translatable="false" name="preference_key_grab_url">grabUrl</string>
