@@ -19,7 +19,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v1
       - name: Check version bump
-        run: F=$(git diff --diff-filter=M origin/master -- "MuzeiWebcam/build.gradle"); echo $F | grep "def version"
+        run: git diff --diff-filter=M origin/master -- "MuzeiWebcam/build.gradle" | grep "def version"
   ci:
     runs-on: ubuntu-latest
     steps:
