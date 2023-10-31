@@ -10,21 +10,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Check if there are fixup commits
         run: git log --pretty=format:%s origin/master.. | xargs | grep -v fixup
   version:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Check version bump
         run: git diff --diff-filter=M origin/master -- "MuzeiWebcam/build.gradle" | grep "def version"
   ci:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Install JDK 1.8
         uses: actions/setup-java@v1
         with:
