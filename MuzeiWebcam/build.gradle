@@ -8,12 +8,12 @@ def versionPatch = 1
 def versionBuild = 0
 
 android {
-    compileSdk 30
+    compileSdk 34
     namespace 'net.luxteam.muzeiwebcam'
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 30
+        targetSdkVersion 34
         versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         multiDexEnabled true
