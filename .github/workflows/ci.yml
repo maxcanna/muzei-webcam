@@ -41,11 +41,13 @@ jobs:
           mkdir -p $HOME/android-sdk-linux/licenses
           echo "24333f8a63b6825ea9c5514f83c2829b004d1fee" >> $HOME/android-sdk-linux/licenses/android-sdk-license
       - name: Cache Gradle packages
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
-          path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
-          restore-keys: ${{ runner.os }}-gradle
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: ${{ runner.os }}-gradle-
       - name: Get google-services.json
         run:  echo ${{ secrets.GOOGLE_SERVICES_JSON }} | base64 -d > MuzeiWebcam/google-services.json
       - name: Lint
