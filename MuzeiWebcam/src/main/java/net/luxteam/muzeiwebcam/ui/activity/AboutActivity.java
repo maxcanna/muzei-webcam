@@ -11,7 +11,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,40 +40,28 @@ public class AboutActivity extends AppCompatActivity {
         mVersionTextView.setText(BuildConfig.VERSION_NAME);
         mCreditsTextView.setText(Html.fromHtml(getString(R.string.about_credits)));
 
-        mTwitterImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_twitter)));
-                startActivity(browserIntent);
-                trackContactEvent("twitter");
-            }
+        mTwitterImageView.setOnClickListener(view -> {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_twitter)));
+            startActivity(browserIntent);
+            trackContactEvent("twitter");
         });
 
-        mFacebookImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_facebook)));
-                startActivity(browserIntent);
-                trackContactEvent("facebook");
-            }
+        mFacebookImageView.setOnClickListener(view -> {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_facebook)));
+            startActivity(browserIntent);
+            trackContactEvent("facebook");
         });
 
-        mGplayImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_gplay)));
-                startActivity(browserIntent);
-                trackContactEvent("play");
-            }
+        mGplayImageView.setOnClickListener(view -> {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_gplay)));
+            startActivity(browserIntent);
+            trackContactEvent("play");
         });
 
-        mGithubImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_github)));
-                startActivity(browserIntent);
-                trackContactEvent("gh");
-            }
+        mGithubImageView.setOnClickListener(view -> {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_github)));
+            startActivity(browserIntent);
+            trackContactEvent("gh");
         });
     }
 

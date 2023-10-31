@@ -4,28 +4,31 @@ apply plugin: 'com.google.firebase.crashlytics'
 
 def versionMajor = 2
 def versionMinor = 4
-def versionPatch = 1
+def versionPatch = 2
 def versionBuild = 0
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion '29.0.3'
+    compileSdk 34
+    namespace 'net.luxteam.muzeiwebcam'
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 30
+        targetSdkVersion 34
         versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+        multiDexEnabled true
     }
 }
 
-task getVersionNumber{
-    file("./versionNumber").text = "v${versionMajor}.${versionMinor}.${versionPatch}"
+tasks.register('getVersionNumber') {
+    doLast {
+        file("./versionNumber").text = "v${versionMajor}.${versionMinor}.${versionPatch}"
+    }
 }
 
 dependencies {
     implementation 'com.google.android.apps.muzei:muzei-api:3.4.0'
-    implementation 'androidx.preference:preference:1.1.1'
-    implementation 'com.google.firebase:firebase-analytics:18.0.2'
-    implementation 'com.google.firebase:firebase-crashlytics:17.4.1'
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'com.google.firebase:firebase-analytics:21.4.0'
+    implementation 'com.google.firebase:firebase-crashlytics:18.5.0'
 }
