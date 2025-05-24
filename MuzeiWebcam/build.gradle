@@ -10,6 +10,7 @@ def versionBuild = 0
 android {
     compileSdk 35
     namespace 'net.luxteam.muzeiwebcam'
+    buildFeatures.buildConfig = true
 
     defaultConfig {
         minSdkVersion 21
