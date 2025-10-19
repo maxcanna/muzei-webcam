@@ -14,7 +14,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Check if there are fixup commits
-        run: git log --pretty=format:%s origin/master.. | xargs | grep -v fixup
+        run: git log --pretty=format:%s origin/master.. | xargs -0 | grep -v fixup
   version:
     runs-on: ubuntu-latest
     steps:
