@@ -24,7 +24,7 @@ jobs:
           fetch-depth: 0
       - name: Check version bump
         run: git diff --diff-filter=M origin/master -- "MuzeiWebcam/build.gradle" | grep "def version"
-  ci:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
@@ -53,6 +53,9 @@ jobs:
       - name: Lint
         run: |
           ./gradlew lintD
+      - name: Test
+        run: |
+          ./gradlew testD
       - name: Build
         run: |
           ./gradlew bundleDebug
