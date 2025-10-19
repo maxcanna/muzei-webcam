@@ -24,7 +24,7 @@ android {
 tasks.register('getVersionNumber') {
     def outputFile = file("./versionNumber")
     doLast {
-        outputFile.text = "${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
+        outputFile.text = "v${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
     }
 }
 
