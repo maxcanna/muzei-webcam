@@ -34,21 +34,21 @@ jobs:
         run: echo ${{ secrets.GOOGLE_SERVICES_JSON }} | base64 -d > MuzeiWebcam/google-services.json
       - name: Build
         run: |
-          ./gradlew assembleRelease
+          ./gradlew bundleRelease
       - name: Set env vars
         run: |
-          ./gradlew getVersionNumber
+          ./gradlew getVersionNumber getReleaseNotes
           echo VERSION_NUMBER=$(cat MuzeiWebcam/versionNumber) >> $GITHUB_ENV
           echo APK_NAME=$(cat MuzeiWebcam/versionNumber | cut -c 2-6) >> $GITHUB_ENV
           echo 'RELEASE_NOTES<<EOF' >> $GITHUB_ENV
-          git log --reverse --no-merges --format='- %s' $(git log --merges --format='%H' -n 2)..HEAD -- >> $GITHUB_ENV
+          cat releaseNotes >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
       - name: Create release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: MuzeiWebcam/build/outputs/apk/release/MuzeiWebcam-release-unsigned.apk
-          asset_name: MuzeiWebcam.${{ env.APK_NAME }}.apk
+          file: MuzeiWebcam/build/outputs/bundle/release/MuzeiWebcam-release.aab
+          asset_name: MuzeiWebcam.${{ env.APK_NAME }}.aab
           release_name: ${{ env.VERSION_NUMBER }}
           tag: ${{ env.VERSION_NUMBER }}
           overwrite: true

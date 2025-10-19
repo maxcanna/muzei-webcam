@@ -3,33 +3,39 @@ apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
 
 def versionMajor = 2
-def versionMinor = 5
+def versionMinor = 6
 def versionPatch = 0
 def versionBuild = 0
 
 android {
-    compileSdk 35
-    namespace 'net.luxteam.muzeiwebcam'
+    compileSdk = 36
+    namespace = 'net.luxteam.muzeiwebcam'
     buildFeatures.buildConfig = true
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 35
+        minSdkVersion 23
+        targetSdkVersion 36
         versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
-        multiDexEnabled true
+        multiDexEnabled = true
     }
 }
 
 tasks.register('getVersionNumber') {
+    def outputFile = file("./versionNumber")
     doLast {
-        file("./versionNumber").text = "v${versionMajor}.${versionMinor}.${versionPatch}"
+        outputFile.text = "${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
     }
+}
+
+tasks.register('getReleaseNotes', Exec) {
+    commandLine 'sh', '-c', "git log --reverse --no-merges --format='- %s' \$(git log --merges --format='%H' -n 2)..HEAD > releaseNotes"
 }
 
 dependencies {
     implementation 'com.google.android.apps.muzei:muzei-api:3.4.2'
     implementation 'androidx.preference:preference:1.2.1'
-    implementation 'com.google.firebase:firebase-analytics:22.4.0'
-    implementation 'com.google.firebase:firebase-crashlytics:19.4.3'
+    implementation 'com.google.firebase:firebase-analytics:23.0.0'
+    implementation 'com.google.firebase:firebase-crashlytics:20.0.3'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
 }

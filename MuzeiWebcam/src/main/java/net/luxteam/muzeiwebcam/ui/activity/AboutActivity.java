@@ -10,7 +10,6 @@ package net.luxteam.muzeiwebcam.ui.activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.Html;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +19,7 @@ import net.luxteam.muzeiwebcam.BuildConfig;
 import net.luxteam.muzeiwebcam.R;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.text.HtmlCompat;
 
 public class AboutActivity extends AppCompatActivity {
     private FirebaseAnalytics mFirebaseAnalytics;
@@ -31,26 +31,12 @@ public class AboutActivity extends AppCompatActivity {
 
         TextView mVersionTextView = findViewById(R.id.about_version);
         TextView mCreditsTextView = findViewById(R.id.about_credits);
-        ImageView mTwitterImageView = findViewById(R.id.about_twitter);
-        ImageView mFacebookImageView = findViewById(R.id.about_facebook);
         ImageView mGplayImageView = findViewById(R.id.about_gplay);
         ImageView mGithubImageView = findViewById(R.id.about_github);
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         mVersionTextView.setText(BuildConfig.VERSION_NAME);
-        mCreditsTextView.setText(Html.fromHtml(getString(R.string.about_credits)));
-
-        mTwitterImageView.setOnClickListener(view -> {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_twitter)));
-            startActivity(browserIntent);
-            trackContactEvent("twitter");
-        });
-
-        mFacebookImageView.setOnClickListener(view -> {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_facebook)));
-            startActivity(browserIntent);
-            trackContactEvent("facebook");
-        });
+        mCreditsTextView.setText(HtmlCompat.fromHtml(getString(R.string.about_credits), HtmlCompat.FROM_HTML_MODE_LEGACY));
 
         mGplayImageView.setOnClickListener(view -> {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_contacts_gplay)));

@@ -14,9 +14,9 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 
 import net.luxteam.muzeiwebcam.ui.fragment.MWPreferenceFragment;
 
-import androidx.fragment.app.FragmentActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class SettingsActivity extends FragmentActivity {
+public class SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,6 @@ public class SettingsActivity extends FragmentActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(android.R.id.content, f)
-                .commitAllowingStateLoss();
+                .commit();
     }
 }
