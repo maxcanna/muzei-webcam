@@ -55,9 +55,9 @@ jobs:
           ./gradlew lintD
       - name: Build
         run: |
-          ./gradlew assembleDebug
-      - name: Upload APK as artifact
+          ./gradlew bundleDebug
+      - name: Upload Bundle as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: APK
-          path: MuzeiWebcam/build/outputs/apk/debug/MuzeiWebcam-debug.apk
+          name: Bundle
+          path: MuzeiWebcam/build/outputs/bundle/debug/MuzeiWebcam-debug.aab
