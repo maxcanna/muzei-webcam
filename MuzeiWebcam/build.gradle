@@ -8,8 +8,8 @@ def versionPatch = 0
 def versionBuild = 0
 
 android {
-    compileSdk 36
-    namespace 'net.luxteam.muzeiwebcam'
+    compileSdk = 36
+    namespace = 'net.luxteam.muzeiwebcam'
     buildFeatures.buildConfig = true
 
     defaultConfig {
@@ -17,13 +17,14 @@ android {
         targetSdkVersion 36
         versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
-        multiDexEnabled true
+        multiDexEnabled = true
     }
 }
 
 tasks.register('getVersionNumber') {
+    def outputFile = file("./versionNumber")
     doLast {
-        file("./versionNumber").text = "v${versionMajor}.${versionMinor}.${versionPatch}"
+        outputFile.text = "${versionMajor}.${versionMinor}.${versionPatch}"
     }
 }
 

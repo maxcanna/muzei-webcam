@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:fontFamily="@font/alegreya_black_italic"
-        android:drawableEnd="@drawable/ic_action_info"
+        app:drawableEndCompat="@drawable/ic_action_info"
         android:drawablePadding="-33dp"
         android:id="@+id/about" />
     <FrameLayout
@@ -28,5 +28,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/about"
-        android:id="@android:id/list_container" tools:targetApi="N" />
+        android:id="@android:id/list_container"
+        tools:targetApi="N" />
 </androidx.constraintlayout.widget.ConstraintLayout>

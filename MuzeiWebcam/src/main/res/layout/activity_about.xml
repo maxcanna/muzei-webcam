@@ -88,7 +88,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:id="@+id/about_credits_title"
             app:layout_constraintTop_toBottomOf="@id/about_gplay"
-            android:fontFamily="fonts/Alegreya-BlackItalic.ttf" />
+            android:fontFamily="@font/alegreya_black_italic" />
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
