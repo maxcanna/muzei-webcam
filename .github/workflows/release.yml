@@ -37,11 +37,11 @@ jobs:
           ./gradlew bundleRelease
       - name: Set env vars
         run: |
-          ./gradlew getVersionNumber
+          ./gradlew getVersionNumber getReleaseNotes
           echo VERSION_NUMBER=$(cat MuzeiWebcam/versionNumber) >> $GITHUB_ENV
           echo APK_NAME=$(cat MuzeiWebcam/versionNumber | cut -c 2-6) >> $GITHUB_ENV
           echo 'RELEASE_NOTES<<EOF' >> $GITHUB_ENV
-          git log --reverse --no-merges --format='- %s' $(git log --merges --format='%H' -n 2)..HEAD -- >> $GITHUB_ENV
+          cat releaseNotes >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
       - name: Create release
         uses: svenstaro/upload-release-action@v2

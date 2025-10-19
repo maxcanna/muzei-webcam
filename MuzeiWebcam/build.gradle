@@ -27,6 +27,10 @@ tasks.register('getVersionNumber') {
     }
 }
 
+tasks.register('getReleaseNotes', Exec) {
+    commandLine 'sh', '-c', "git log --reverse --no-merges --format='- %s' \$(git log --merges --format='%H' -n 2)..HEAD > releaseNotes"
+}
+
 dependencies {
     implementation 'com.google.android.apps.muzei:muzei-api:3.4.2'
     implementation 'androidx.preference:preference:1.2.1'
