@@ -39,7 +39,7 @@ jobs:
         run: |
           ./gradlew getVersionNumber getReleaseNotes
           echo VERSION_NUMBER=$(cat MuzeiWebcam/versionNumber) >> $GITHUB_ENV
-          echo APK_NAME=$(cat MuzeiWebcam/versionNumber | cut -c 2-6) >> $GITHUB_ENV
+          echo APK_NAME=$(cat MuzeiWebcam/versionNumber | cut -c 2-7) >> $GITHUB_ENV
           echo 'RELEASE_NOTES<<EOF' >> $GITHUB_ENV
           cat MuzeiWebcam/releaseNotes >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
