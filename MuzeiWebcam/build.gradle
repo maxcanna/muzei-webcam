@@ -5,7 +5,7 @@ apply plugin: 'com.google.firebase.crashlytics'
 def versionMajor = 2
 def versionMinor = 6
 def versionPatch = 0
-def versionBuild = 1
+def versionBuild = 0
 
 android {
     compileSdk = 36
@@ -24,7 +24,7 @@ android {
 tasks.register('getVersionNumber') {
     def outputFile = file("./versionNumber")
     doLast {
-        outputFile.text = "${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
+        outputFile.text = "v${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
     }
 }
 
