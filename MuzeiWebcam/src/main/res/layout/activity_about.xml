@@ -45,35 +45,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:contentDescription="@string/content_description_twitter"
-                android:id="@+id/about_twitter"
-                android:src="@drawable/ic_action_twitter"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:contentDescription="@string/content_description_facebook"
-                android:id="@+id/about_facebook"
-                android:src="@drawable/ic_action_facebook"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:contentDescription="@string/content_description_gplay"
-                android:id="@+id/about_gplay"
-                android:src="@drawable/ic_action_gplay"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:contentDescription="@string/content_description_github"
-                android:id="@+id/about_github"
-                android:src="@drawable/ic_action_github"/>
-        </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:contentDescription="@string/content_description_gplay"
+            app:layout_constraintEnd_toStartOf="@+id/about_github"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/about_contacts"
+            android:id="@+id/about_gplay"
+            android:src="@drawable/ic_action_gplay" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:contentDescription="@string/content_description_github"
+            app:layout_constraintBottom_toBottomOf="@id/about_gplay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/about_gplay"
+            app:layout_constraintTop_toTopOf="@id/about_gplay"
+            android:id="@+id/about_github"
+            android:src="@drawable/ic_action_github" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

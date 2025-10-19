@@ -13,8 +13,6 @@
     <string name="about_credits_title">Credits</string>
     <string name="about_description">Muzei Live Wallpaper extension created by Massimiliano Cannarozzo to show webcam imagery as wallpaper.</string>
     <string name="about_contacts">Contacts</string>
-    <string translatable="false" name="content_description_twitter">Twitter</string>
-    <string translatable="false" name="content_description_facebook">Facebook</string>
     <string translatable="false" name="content_description_gplay">Google Play</string>
     <string translatable="false" name="content_description_github">GitHub</string>
 </resources>
